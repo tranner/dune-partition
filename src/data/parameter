@@ -1,0 +1,34 @@
+# -*- mode: conf -*-
+fem.verboserank: 0
+fem.solver.verbose: 0
+
+fem.io.macroGridFile_2d: ../data/sphere.dgf
+
+istl.preconditioning.method: jacobi # amg-ilu-0
+istl.preconditioning.iterations: 1
+istl.preconditioning.relaxation: 1
+# enable simple Jacobi preconditioning (for non istl inverse operators)
+fem.preconditioning: true
+
+fem.prefix: ../output
+fem.io.savestep: -1
+fem.timeprovider.factor: 1
+
+partition.timestep: 1.0e-4
+partition.endtime: 100
+partition.theta: 0.5
+partition.level: 3
+partition.repeats: 1
+partition.reducetimestepfactor: 1
+
+partition.epsilon: 0.1
+partition.maxlevel: 30
+partition.epsilonfactor: 0.70710678118654757
+partition.timestepfactor: 0.70710678118654757
+partition.useexactinitialcondition: true
+partition.innertol: 1.0e-4
+partition.outertol: 1.0e-8
+partition.nextenergyupdate: 0.1
+
+eigenvalue.level: 3
+eigenvalue.repeats: 5
